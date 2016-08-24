@@ -16,6 +16,7 @@ ${OBJS}: %.o : %.cpp | gen_header
 	g++ -MMD -MP -c $< -o $@
 
 .PHONY: gen_header
+.NOTPARALLEL: gen_header
 gen_header:
 	./header_gen.sh
 
